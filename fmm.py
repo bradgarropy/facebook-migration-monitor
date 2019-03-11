@@ -4,7 +4,9 @@ import random
 import time
 
 # custom imports
+import logger
 import utils
+import cli
 
 
 def get_service_status(host, port):
@@ -182,3 +184,30 @@ def monitor(old_port, new_port, path):
     summary(migration_status, duration)
 
     return
+
+
+def main():
+    """ Main method.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
+
+    # configure logging
+    logger.configure()
+
+    # cli arguments
+    args = cli.cli()
+
+    # run migration monitor
+    monitor(args.old, args.new, args.hosts)
+
+    return
+
+
+if __name__ == "__main__":
+
+    main()

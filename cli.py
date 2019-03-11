@@ -1,10 +1,5 @@
 # standard imports
 import argparse
-import logging
-import logger
-
-# custom imports
-import fmm
 
 
 def cli():
@@ -41,30 +36,3 @@ def cli():
     args = parser.parse_args()
 
     return args
-
-
-def main():
-    """ Main method.
-
-    Parameters:
-        None
-
-    Returns:
-        None
-    """
-
-    # configure logging
-    logger.configure()
-
-    # cli arguments
-    args = cli()
-
-    # run migration monitor
-    fmm.monitor(args.old, args.new, args.hosts)
-
-    return
-
-
-if __name__ == "__main__":
-
-    main()
