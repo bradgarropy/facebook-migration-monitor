@@ -4,11 +4,6 @@
 # python
 *.pyc
 
-# distribution
-*.egg-info
-build
-dist
-
 # output
 *.txt
 !hosts.txt
